@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongodb
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: <MONGODB_USER>
+      MONGO_INITDB_ROOT_PASSWORD: <PASSWORD>
+    networks:
+      - i-blatt-network
+  app:
+    build: .
+    command: node /app/src/server.js
+    ports:
+      - "3456:3456"
+    depends_on:
+      - mongodb
+    environment:
+      NODE_ENV: production
+      MONGO_URI: mongodb://mongo:27017/i-blatt-db
+    networks:
+      - i-blatt-network
+volumes:
+  mongo-data:
+networks:
+  i-blatt-network:

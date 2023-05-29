@@ -1,0 +1,38 @@
+{
+  "name": "i-blatt-backend",
+  "version": "0.0.1",
+  "description": "back-end for i-Blatt web app",
+  "main": "./src/server.js",
+  "repository": "https://github.com/dsantos-sg/i-blatt-backend.git",
+  "author": "Daniel Santos <60348746+dsantos-sg@users.noreply.github.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "node -v",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1386.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-json-validator-middleware": "^3.0.1",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.0",
+    "mime": "^3.0.0",
+    "mongoose": "^7.2.1",
+    "multer": "^1.4.5-lts.1",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
